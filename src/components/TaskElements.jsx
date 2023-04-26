@@ -1,17 +1,14 @@
-
-
-function TaskElements ({task, onClick}) {
-
-    return (
-        <ul style={{listStyleType: "none" }}>
-            <li className="myLi d-flex justify-content-between">{task}
-            <i onClick={onClick} 
-            className="bi bi-trash"></i>
-            </li>
-        </ul>
-
-    )
-
+function TaskElements({ task, onClick, taskList }) {
+  return (
+    <ul style={{ listStyleType: "none" }}>
+      <li className="myLi d-flex justify-content-between">
+        {task}
+        {task !== "Add your task" && (
+          <i onClick={onClick} className="bi bi-trash"></i>
+        )}
+      </li>
+    </ul>
+  );
 }
 
-export default TaskElements
+export default TaskElements;
